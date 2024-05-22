@@ -1,0 +1,11 @@
+:host {
+  display: block;
+}
+
+sky-page-content {
+  min-height: calc(100vh - 200px);
+
+  sky-data-manager {
+    height: 100%;
+  }
+}

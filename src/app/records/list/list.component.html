@@ -1,0 +1,43 @@
+<ng-template #editLinkTemplate let-row="row">
+  <button
+    type="button"
+    class="sky-btn sky-btn-primary"
+    (click)="onEditClick(row.id)">
+    <sky-icon icon="edit" />
+  </button>
+</ng-template>
+<ng-template #deleteLinkTemplate let-row="row">
+  <button
+    type="button"
+    class="sky-btn sky-btn-danger"
+    (click)="onDeleteClick(row.id)">
+    <sky-icon icon="trash" />
+  </button>
+</ng-template>
+<sky-page layout="list">
+  <sky-page-header pageTitle="Records" [parentLink]="parentLink" />
+  <sky-page-content>
+    <sky-data-manager>
+      <sky-data-manager-toolbar>
+        <sky-data-manager-toolbar-primary-item>
+          <button
+            type="button"
+            class="sky-btn sky-btn-default"
+            (click)="onEditClick('')">
+            <sky-icon icon="add" />
+            New
+          </button>
+        </sky-data-manager-toolbar-primary-item>
+      </sky-data-manager-toolbar>
+      <sky-data-view skyAgGridDataManagerAdapter viewId="gridView">
+        <sky-ag-grid-wrapper
+          skyAgGridRowDelete
+          [(rowDeleteIds)]="rowDeleteIds"
+          (rowDeleteCancel)="rowDeleteCancel($event)"
+          (rowDeleteConfirm)="rowDeleteConfirm($event)">
+          <ag-grid-angular [gridOptions]="gridOptions" [rowData]="data()" />
+        </sky-ag-grid-wrapper>
+      </sky-data-view>
+    </sky-data-manager>
+  </sky-page-content>
+</sky-page>
