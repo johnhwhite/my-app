@@ -1,0 +1,30 @@
+[
+  {
+    "id": "1",
+    "name": "Usain Bolt",
+    "event": "100m dash",
+    "country": { "iso2": "jm", "name": "Jamaica" },
+    "award": "Gold"
+  },
+  {
+    "id": "2",
+    "name": "Allyson Felix",
+    "event": "400m dash",
+    "country": { "iso2": "us", "name": "United States" },
+    "award": "Silver"
+  },
+  {
+    "id": "3",
+    "name": "Eliud Kipchoge",
+    "event": "Marathon",
+    "country": { "iso2": "ke", "name": "Kenya" },
+    "award": "Gold"
+  },
+  {
+    "id": "4",
+    "name": "Yohan Blake",
+    "event": "200m dash",
+    "country": { "iso2": "jm", "name": "Jamaica" },
+    "award": "Silver"
+  }
+]
