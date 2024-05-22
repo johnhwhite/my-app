@@ -1,0 +1,53 @@
+<form [formGroup]="form" (submit)="saveForm()">
+  <sky-modal>
+    <sky-modal-header>
+      <h2>{{ title() }}</h2>
+    </sky-modal-header>
+    <sky-modal-content>
+      <sky-wait [isWaiting]="loading()" />
+      <sky-input-box labelText="Name" stacked>
+        <input
+          formControlName="name"
+          spellcheck="false"
+          autocomplete="off"
+          id="search-name"
+          type="text" />
+      </sky-input-box>
+      <sky-input-box labelText="Event" stacked>
+        <input
+          formControlName="event"
+          spellcheck="false"
+          autocomplete="off"
+          type="text"
+          id="search-event" />
+      </sky-input-box>
+      <sky-input-box
+        labelText="Country"
+        stacked
+        [hasErrors]="form.controls.country.invalid">
+        <sky-country-field formControlName="country" />
+      </sky-input-box>
+      <sky-input-box labelText="Award" stacked>
+        <input
+          formControlName="award"
+          type="text"
+          autocomplete="off"
+          id="search-award" />
+      </sky-input-box>
+    </sky-modal-content>
+    <sky-modal-footer>
+      <button
+        class="sky-btn sky-btn-primary"
+        type="submit"
+        [disabled]="loading()">
+        Save
+      </button>
+      <button
+        class="sky-btn sky-btn-link"
+        type="button"
+        (click)="modalInstance?.close()">
+        Cancel
+      </button>
+    </sky-modal-footer>
+  </sky-modal>
+</form>
